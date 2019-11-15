@@ -1,0 +1,8 @@
+D:\projects\IdeaProjects\workspace\testlagi\workspace-spring\domain\core\src\main\java\dev\riza\workspace\domain\core\domain\organization\Organization.java
+D:\projects\IdeaProjects\workspace\testlagi\workspace-spring\domain\core\src\main\java\dev\riza\workspace\domain\core\TestLibrary.java
+D:\projects\IdeaProjects\workspace\testlagi\workspace-spring\domain\core\src\main\java\dev\riza\workspace\domain\core\domain\DomainEvent.java
+D:\projects\IdeaProjects\workspace\testlagi\workspace-spring\domain\core\src\main\java\dev\riza\workspace\domain\core\domain\organization\EvtNameChanged.java
+D:\projects\IdeaProjects\workspace\testlagi\workspace-spring\domain\core\src\main\java\dev\riza\workspace\domain\core\port\OrganizationService.java
+D:\projects\IdeaProjects\workspace\testlagi\workspace-spring\domain\core\src\main\java\dev\riza\workspace\domain\core\domain\organization\OrganizationServiceImpl.java
+D:\projects\IdeaProjects\workspace\testlagi\workspace-spring\domain\core\src\main\java\dev\riza\workspace\domain\core\domain\organization\EvtInitialized.java
+D:\projects\IdeaProjects\workspace\testlagi\workspace-spring\domain\core\src\main\java\dev\riza\workspace\domain\core\port\OrganizationEventStore.java

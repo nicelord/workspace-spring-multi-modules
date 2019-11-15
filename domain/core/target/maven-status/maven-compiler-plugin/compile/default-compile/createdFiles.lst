@@ -1,0 +1,7 @@
+dev\riza\workspace\domain\core\port\OrganizationService.class
+dev\riza\workspace\domain\core\domain\organization\Organization.class
+dev\riza\workspace\domain\core\port\OrganizationEventStore.class
+dev\riza\workspace\domain\core\domain\DomainEvent.class
+dev\riza\workspace\domain\core\domain\organization\EvtNameChanged.class
+dev\riza\workspace\domain\core\domain\organization\OrganizationServiceImpl.class
+dev\riza\workspace\domain\core\domain\organization\EvtInitialized.class
