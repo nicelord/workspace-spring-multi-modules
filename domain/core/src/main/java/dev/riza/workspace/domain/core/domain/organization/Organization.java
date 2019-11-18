@@ -23,17 +23,23 @@ public class Organization {
     private UUID aggregateId;
     private String name;
     private List<DomainEvent> changes = new ArrayList<>();
+    private int baseVersion;
+    private String address;
+
 
     public Organization(UUID aggregateId, String name) {
         this.aggregateId = aggregateId;
         this.name = name;
-        appendChange(new EvtInitialized(aggregateId, LocalDateTime.now(), 0));
-
+        appendChange(new EvtInitialized(aggregateId, LocalDateTime.now(), getNextVersion()));
     }
 
     public Organization(UUID aggregateId, List<DomainEvent> domainEvents) {
         this.aggregateId = aggregateId;
-        domainEvents.forEach(this::appendChange);
+        domainEvents.forEach(domainEvent -> {
+            System.out.println(domainEvent.type() + " : " + domainEvent.version());
+            appendChange(domainEvent);
+            this.baseVersion = domainEvent.version();
+        });
         this.changes.clear();
     }
 
@@ -46,8 +52,13 @@ public class Organization {
         if (name.equals(this.name)) {
             throw new IllegalStateException("same name");
         }
-        appendChange(new EvtNameChanged(aggregateId, LocalDateTime.now(), 0, name));
+        appendChange(new EvtNameChanged(aggregateId, LocalDateTime.now(), getNextVersion(), name));
     }
+
+    void changeAddress(String newAddress) {
+        appendChange(new EvtAddressChanged(aggregateId, LocalDateTime.now(), getNextVersion(), newAddress));
+    }
+
 
 
     /**
@@ -59,9 +70,18 @@ public class Organization {
         return this;
     }
 
+    private Organization addressChanged(EvtAddressChanged event) {
+        this.address = event.getNewAddress();
+        return this;
+    }
+
+
 
     private void appendChange(DomainEvent domainEvent) {
-        /** TODO check version */
+        if (domainEvent.version() != getNextVersion()) {
+            throw new IllegalStateException(String.format("New event version '%d' does not match expected next version '%d' on domain event '%s'",
+                    domainEvent.version(), getNextVersion(), domainEvent.type()));
+        }
 
         changes.add(domainEvent);
         applyChange(domainEvent);
@@ -70,12 +90,17 @@ public class Organization {
     private Organization applyChange(DomainEvent domainEvent) {
         return API.Match(domainEvent).of(
                 Case($(Predicates.instanceOf(EvtInitialized.class)), this),
-                Case($(Predicates.instanceOf(EvtNameChanged.class)), this::nameChanged)
+                Case($(Predicates.instanceOf(EvtNameChanged.class)), this::nameChanged),
+                Case($(Predicates.instanceOf(EvtAddressChanged.class)), this::addressChanged)
         );
     }
 
 
     public List<DomainEvent> getChanges() {
         return Collections.unmodifiableList(changes);
+    }
+
+    protected int getNextVersion() {
+        return baseVersion + 1;
     }
 }

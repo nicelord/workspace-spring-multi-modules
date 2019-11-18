@@ -1,7 +1,9 @@
 package dev.riza.workspace.web;
 
 
+import dev.riza.workspace.domain.app.commands.CmdChangeAddress;
 import dev.riza.workspace.domain.app.commands.CmdChangeName;
+import dev.riza.workspace.domain.app.commands.CmdInitOrganization;
 import dev.riza.workspace.domain.core.TestLibrary;
 import dev.riza.workspace.domain.core.domain.organization.Organization;
 import dev.riza.workspace.service.adapter.SpringOrganizationService;
@@ -14,6 +16,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.event.EventListener;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
 
@@ -35,9 +40,36 @@ public class WorkspaceSpringApplication {
     @EventListener(ApplicationReadyEvent.class)
     public void doSomethingAfterStartup() throws InterruptedException {
 
-        Organization organization = new Organization(UUID.randomUUID(),"TEST");
-        springOrganizationService.changeName(new CmdChangeName(organization.getAggregateId(),"SAD"));
+//        Organization organization = new Organization(UUID.randomUUID(),"TEST");
+//        springOrganizationService.initialize(new CmdInitOrganization(organization));
+//        springOrganizationService.changeName(new CmdChangeName(organization.getAggregateId(),"SAD"));
+//        springOrganizationService.changeName(new CmdChangeName(organization.getAggregateId(),"ABC"));
+//        springOrganizationService.changeName(new CmdChangeName(organization.getAggregateId(),"ASDASD"));
+//        springOrganizationService.changeAddress(new CmdChangeAddress(organization.getAggregateId(),"alamat baru disni"));
+//        System.out.println(springOrganizationService.load(organization.getAggregateId()).getBaseVersion());
 
+
+    }
+
+
+}
+
+@RestController("/organization")
+class Controller {
+    @Autowired
+    SpringOrganizationService springOrganizationService;
+
+
+    @GetMapping("/organization/create")
+    public String create(){
+        Organization organization = new Organization(UUID.randomUUID(),"TEST");
+        springOrganizationService.initialize(new CmdInitOrganization(organization));
+        return organization.getAggregateId().toString();
+    }
+
+    @GetMapping("/organization/change/{uuid}/{newName}")
+    public void change(@PathVariable UUID uuid, @PathVariable String newName){
+        springOrganizationService.changeName(new CmdChangeName(uuid,newName));
     }
 
 

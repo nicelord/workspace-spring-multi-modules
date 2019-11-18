@@ -1,2 +1,4 @@
-D:\projects\IdeaProjects\workspace\testlagi\workspace-spring\domain\app\src\main\java\dev\riza\workspace\domain\app\commands\CmdChangeName.java
-D:\projects\IdeaProjects\workspace\testlagi\workspace-spring\domain\app\src\main\java\dev\riza\workspace\domain\app\port\OrganizationOperation.java
+D:\Projects\IdeaProjects\_PRACTICE\workspace-spring-multi-modules\domain\app\src\main\java\dev\riza\workspace\domain\app\commands\CmdChangeAddress.java
+D:\Projects\IdeaProjects\_PRACTICE\workspace-spring-multi-modules\domain\app\src\main\java\dev\riza\workspace\domain\app\commands\CmdInitOrganization.java
+D:\Projects\IdeaProjects\_PRACTICE\workspace-spring-multi-modules\domain\app\src\main\java\dev\riza\workspace\domain\app\port\OrganizationOperation.java
+D:\Projects\IdeaProjects\_PRACTICE\workspace-spring-multi-modules\domain\app\src\main\java\dev\riza\workspace\domain\app\commands\CmdChangeName.java

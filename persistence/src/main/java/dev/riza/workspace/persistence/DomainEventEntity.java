@@ -1,7 +1,9 @@
 package dev.riza.workspace.persistence;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +14,7 @@ import java.util.UUID;
 @Entity
 @Data
 @Builder
+@AllArgsConstructor
 public class DomainEventEntity {
     @Id
     @GeneratedValue
@@ -23,4 +26,6 @@ public class DomainEventEntity {
     private int version;
     private String payload;
 
+    public DomainEventEntity() {
+    }
 }

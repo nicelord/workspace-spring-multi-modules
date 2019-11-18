@@ -13,7 +13,11 @@ import java.util.UUID;
 
 public interface OrganizationService {
 
+    void initialize(Organization organization);
+
     void changeName(Organization organization, String newName);
+
+    void changeAddress(Organization organization, String newAddress);
 
     void storeEvents(List<DomainEvent> changes);
 

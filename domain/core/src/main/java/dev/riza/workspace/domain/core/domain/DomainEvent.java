@@ -3,6 +3,7 @@ package dev.riza.workspace.domain.core.domain;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import dev.riza.workspace.domain.core.domain.organization.EvtAddressChanged;
 import dev.riza.workspace.domain.core.domain.organization.EvtInitialized;
 import dev.riza.workspace.domain.core.domain.organization.EvtNameChanged;
 
@@ -15,10 +16,13 @@ import java.util.UUID;
         property = "type")
 @JsonSubTypes({
         @JsonSubTypes.Type(name = EvtInitialized.type, value = EvtInitialized.class),
-        @JsonSubTypes.Type(name = EvtNameChanged.type, value = EvtNameChanged.class)
+        @JsonSubTypes.Type(name = EvtNameChanged.type, value = EvtNameChanged.class),
+        @JsonSubTypes.Type(name = EvtAddressChanged.type, value = EvtAddressChanged.class)
 })
 
 public interface DomainEvent {
+
+
     String type();
 
     LocalDateTime when();
