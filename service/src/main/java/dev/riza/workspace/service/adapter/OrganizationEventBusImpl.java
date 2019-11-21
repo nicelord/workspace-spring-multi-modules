@@ -1,11 +1,10 @@
 package dev.riza.workspace.service.adapter;
 
-import dev.riza.workspace.domain.core.domain.DomainEvent;
+import dev.riza.workspace.domain.core.model.DomainEvent;
 import dev.riza.workspace.domain.core.port.OrganizationEventBus;
+import dev.riza.workspace.service.OrganizationStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.integration.support.MessageBuilder;
-import org.springframework.messaging.Message;
-import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.util.MimeTypeUtils;

@@ -1,8 +1,8 @@
 package dev.riza.workspace.domain.core.port;
 
 
-import dev.riza.workspace.domain.core.domain.DomainEvent;
-import dev.riza.workspace.domain.core.domain.organization.Organization;
+import dev.riza.workspace.domain.core.model.DomainEvent;
+import dev.riza.workspace.domain.core.model.organization.Organization;
 
 import java.util.List;
 import java.util.UUID;

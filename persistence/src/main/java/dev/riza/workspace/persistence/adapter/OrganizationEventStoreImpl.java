@@ -1,7 +1,7 @@
 package dev.riza.workspace.persistence.adapter;
 
 
-import dev.riza.workspace.domain.core.domain.DomainEvent;
+import dev.riza.workspace.domain.core.model.DomainEvent;
 import dev.riza.workspace.domain.core.port.OrganizationEventStore;
 import dev.riza.workspace.persistence.OrganizationEventStoreJPA;
 import dev.riza.workspace.persistence.helper.DomainEventSerializer;

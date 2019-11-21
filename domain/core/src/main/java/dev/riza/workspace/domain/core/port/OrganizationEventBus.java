@@ -1,6 +1,6 @@
 package dev.riza.workspace.domain.core.port;
 
-import dev.riza.workspace.domain.core.domain.DomainEvent;
+import dev.riza.workspace.domain.core.model.DomainEvent;
 
 import java.util.List;
 

@@ -31,6 +31,7 @@
     <orderEntry type="module" module-name="service" />
     <orderEntry type="module" module-name="app" />
     <orderEntry type="module" module-name="persistence" />
+    <orderEntry type="module" module-name="projection" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-stream-kafka:3.0.0.RC2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-stream-binder-kafka:3.0.0.RC2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-stream-binder-kafka-core:3.0.0.RC2" level="project" />

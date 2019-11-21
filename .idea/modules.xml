@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/domain/core/core.iml" filepath="$PROJECT_DIR$/domain/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/domain/domain.iml" filepath="$PROJECT_DIR$/domain/domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/persistence/persistence.iml" filepath="$PROJECT_DIR$/persistence/persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projection/projection.iml" filepath="$PROJECT_DIR$/projection/projection.iml" />
       <module fileurl="file://$PROJECT_DIR$/service/service.iml" filepath="$PROJECT_DIR$/service/service.iml" />
       <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />
       <module fileurl="file://$PROJECT_DIR$/workspace-spring.iml" filepath="$PROJECT_DIR$/workspace-spring.iml" />

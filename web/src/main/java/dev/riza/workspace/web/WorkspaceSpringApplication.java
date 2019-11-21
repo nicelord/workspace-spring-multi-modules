@@ -1,12 +1,10 @@
 package dev.riza.workspace.web;
 
 
-import dev.riza.workspace.domain.app.commands.CmdChangeAddress;
 import dev.riza.workspace.domain.app.commands.CmdChangeName;
 import dev.riza.workspace.domain.app.commands.CmdInitOrganization;
-import dev.riza.workspace.domain.core.TestLibrary;
-import dev.riza.workspace.domain.core.domain.organization.Organization;
-import dev.riza.workspace.service.adapter.SpringOrganizationService;
+import dev.riza.workspace.domain.core.model.organization.Organization;
+import dev.riza.workspace.service.SpringOrganizationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,7 +13,6 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.event.EventListener;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;

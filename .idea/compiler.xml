@@ -9,6 +9,7 @@
         <module name="app" />
         <module name="core" />
         <module name="persistence" />
+        <module name="projection" />
         <module name="service" />
         <module name="web" />
       </profile>

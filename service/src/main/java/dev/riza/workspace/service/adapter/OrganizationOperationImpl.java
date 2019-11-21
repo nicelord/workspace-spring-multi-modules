@@ -5,7 +5,7 @@ import dev.riza.workspace.domain.app.commands.CmdChangeAddress;
 import dev.riza.workspace.domain.app.commands.CmdChangeName;
 import dev.riza.workspace.domain.app.commands.CmdInitOrganization;
 import dev.riza.workspace.domain.app.port.OrganizationOperation;
-import dev.riza.workspace.domain.core.domain.organization.Organization;
+import dev.riza.workspace.domain.core.model.organization.Organization;
 import dev.riza.workspace.domain.core.port.OrganizationService;
 import org.springframework.stereotype.Component;
 

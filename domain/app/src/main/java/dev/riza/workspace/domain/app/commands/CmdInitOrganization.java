@@ -1,6 +1,6 @@
 package dev.riza.workspace.domain.app.commands;
 
-import dev.riza.workspace.domain.core.domain.organization.Organization;
+import dev.riza.workspace.domain.core.model.organization.Organization;
 import lombok.Getter;
 
 public class CmdInitOrganization {
